@@ -1,0 +1,29 @@
+
+server:
+  port: 5005 # 应用启动端口
+
+spring:
+   application:
+     name: peelingpeek-exampleService  # 应用名，也是显示在注册中心的名字
+# 配置中心
+   cloud:
+     nacos:
+      discovery:
+         server-addr: 127.0.0.1:8848
+   redis:
+    # 使用的数据库，默认为0
+     database: 0
+    # host主机，默认为localhost
+     host: 127.0.0.1
+    # 端口号,默认为6379
+     port: 6379
+    # 密码，默认为空
+     password:
+rocketmq:
+  namesrvAddr: 172.18.100.85:9876
+  consumer:
+    groupName: examplePushConsumer
+  pullConsumer:
+    groupName: examplePullConsumer
+  topic:
+    getAccountTopic: getAccountTopic

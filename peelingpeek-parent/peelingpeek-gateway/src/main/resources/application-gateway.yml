@@ -1,0 +1,42 @@
+
+server:
+  port: 6999 # 应用启动端口
+
+spring:
+   application:
+     name: peelingpeek-gateway # 应用名，也是显示在注册中心的名字
+   cloud:
+     nacos:
+      discovery:
+         server-addr: 127.0.0.1:8848 # 注册中心地址
+     gateway:
+       discovery:
+         locator:
+           lowerCaseServiceId: true
+           enabled: true # 路由根据注册中心的服务名自动创建代理服务
+       routes:
+        # =====================================
+        - id: peelingpeek-exampleService
+          uri: lb://peelingpeek-exampleService
+          predicates:
+          - Path=/api/exampleService/**
+          filters:
+          - StripPrefix=2
+        - id: peelingpeek-mq
+          uri: lb://peelingpeek-mq
+          predicates:
+          - Path=/api/mq/**
+          filters:
+          - StripPrefix=2
+hystrix:
+  threadpool:
+    default:
+      coreSize: 3000 #并发执行的最大线程数，默认10
+      maxQueueSize: 3000 #BlockingQueue的最大队列数
+      queueSizeRejectionThreshold: 3000 #即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
