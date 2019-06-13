@@ -37,17 +37,10 @@ public class MqController {
         //requestMsg.setParameterMap(parameterMap);
         try {
             String jsonString = JSON.toJSONString(jsonData);
-            /*
-             * Create a message instance, specifying topic, tag and message body.
-             */
             Message msg = new Message(getAccountTopic /* Topic */,
                     "*" /* Tag */,
                     jsonString.getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
             );
-
-            /*
-             * Call send message to deliver message to one of brokers.
-             */
             SendResult sendResult = defaultMQProducer.send(msg);
             String msgId = sendResult.getMsgId();
             SendStatus sendStatus = sendResult.getSendStatus();

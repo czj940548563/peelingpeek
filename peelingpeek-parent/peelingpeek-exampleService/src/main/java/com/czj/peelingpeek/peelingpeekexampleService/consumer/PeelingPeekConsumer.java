@@ -48,7 +48,6 @@ public class PeelingPeekConsumer extends DefaultPullConsumerConfigure implements
                  * 这里可以进行业务操作
                  */
                 String operationResult = testService.operation(testBean);
-
                 /**
                  * 将业务操作的结果放入redis缓存
                  */
