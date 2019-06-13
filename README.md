@@ -7,6 +7,7 @@
 - nacos （阿里巴巴基于springcloud做的服务发现注册中心，类似springcloud的eureka），[安装使用可参照nacos官网](https://nacos.io/zh-cn/docs/quick-start.html)
 - redis
 - rocketmq4.5
+- jemter 并发测试
 #### 思路
 http请求（这里以post请求为例）->
 
@@ -158,6 +159,15 @@ public class RouteLocatorConfig {
         });
     }
 ```
+#### 测试：
+##### 开启500并发：
+![image](https://github.com/czj940548563/images/blob/master/1560407748851.png?raw=true)
+![image](https://github.com/czj940548563/images/blob/master/1560407837459.png?raw=true)
+
+##### 查看redis缓存：
+有500条记录
+![image](https://github.com/czj940548563/images/blob/master/1560407860072.png?raw=true)
+
 
 
 
