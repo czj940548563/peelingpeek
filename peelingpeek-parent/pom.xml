@@ -25,7 +25,7 @@
         <nacos.version>1.0.0</nacos.version>
         <spring-boot-version>2.0.6.RELEASE</spring-boot-version>
         <slf4j.api.version>1.7.26</slf4j.api.version>
-        <fast-json.version>1.2.56</fast-json.version>
+        <fast-json.version>1.2.83</fast-json.version>
         <mysql.connection.version>5.1.47</mysql.connection.version>
     </properties>
     <dependencyManagement>
