@@ -21,7 +21,7 @@
         <maven.compile.target>1.8</maven.compile.target>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <common-lang3.version>3.8.1</common-lang3.version>
-        <common-beanutils.version>1.9.3</common-beanutils.version>
+        <common-beanutils.version>1.9.4</common-beanutils.version>
         <nacos.version>1.0.0</nacos.version>
         <spring-boot-version>2.0.6.RELEASE</spring-boot-version>
         <slf4j.api.version>1.7.26</slf4j.api.version>
